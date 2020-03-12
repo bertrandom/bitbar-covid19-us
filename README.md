@@ -5,11 +5,12 @@ BitBar plugin to show Coronavirus COVID-19 cases in the U.S. in your menubar, re
 
 ![screenshot](/screenshot.png)
 
-## Usage
+## Installation
 
 Install [BitBar](https://github.com/matryer/bitbar)
 
 Install [xsv](https://github.com/BurntSushi/xsv)
+
 `brew install xsv`
 
 Clone the COVID-19 Case data somewhere, e.g.
