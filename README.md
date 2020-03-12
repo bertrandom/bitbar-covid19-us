@@ -11,7 +11,9 @@ Install [BitBar](https://github.com/matryer/bitbar)
 
 Install [xsv](https://github.com/BurntSushi/xsv)
 
-`brew install xsv`
+```
+brew install xsv
+```
 
 Clone the COVID-19 Case data somewhere, e.g.
 
