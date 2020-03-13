@@ -15,7 +15,7 @@ Install [xsv](https://github.com/BurntSushi/xsv)
 brew install xsv
 ```
 
-Clone the COVID-19 Case data somewhere, e.g.
+Clone the [COVID-19 Case data](https://github.com/CSSEGISandData/COVID-19) somewhere, e.g.
 
 ```
 cd ~/code
