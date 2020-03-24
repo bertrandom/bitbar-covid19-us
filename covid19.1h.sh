@@ -7,7 +7,7 @@
 # <bitbar.image>https://github.com/bertrandom/bitbar-covid19-us/blob/master/screenshot.png</bitbar.image>
 # <bitbar.dependencies>jq,tr</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/bertrandom/bitbar-covid19-us</bitbar.abouturl>
-COVID_DATA_DIR="/Users/bert/code/COVID-19/"
+COVID_DATA_DIR="/Users/$(whoami)/code/COVID-19/"
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH'
 cd $COVID_DATA_DIR
 git pull --rebase > /dev/null 2>&1
@@ -16,10 +16,8 @@ FILE=$(date +"%m-%d-%Y".csv)
 if [ ! -f "$FILE" ]; then
     FILE=$(date -v -1d +"%m-%d-%Y".csv)
 fi
-xsv search -s 4 'US' "$FILE" | xsv select 8,10,9 | xsv stats | xsv select 3 | tail -n 3 > /tmp/covid19.txt
+xsv search -s 4 'US' "$FILE" | xsv select 8,9 | xsv stats | xsv select 3 | tail -n 2 > /tmp/covid19.txt
 echo -n "😷 "
 cat /tmp/covid19.txt | sed -n 1,1p | tr -d '\n'
-echo -n " 😳 "
-cat /tmp/covid19.txt | sed -n 2,2p | tr -d '\n'
 echo -n " ⚰️ "
-cat /tmp/covid19.txt | sed -n 3,3p
+cat /tmp/covid19.txt | sed -n 2,2p
