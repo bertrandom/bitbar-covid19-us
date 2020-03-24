@@ -16,7 +16,7 @@ FILE=$(date +"%m-%d-%Y".csv)
 if [ ! -f "$FILE" ]; then
     FILE=$(date -v -1d +"%m-%d-%Y".csv)
 fi
-xsv search -s 2 'US' "$FILE" | xsv select 4,6,5 | xsv stats | xsv select 3 | tail -n 3 > /tmp/covid19.txt
+xsv search -s 4 'US' "$FILE" | xsv select 8,10,9 | xsv stats | xsv select 3 | tail -n 3 > /tmp/covid19.txt
 echo -n "😷 "
 cat /tmp/covid19.txt | sed -n 1,1p | tr -d '\n'
 echo -n " 😳 "
